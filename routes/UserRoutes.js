@@ -9,3 +9,4 @@ router.get('/me', protect, getUserProfile);
 router.post('/logout', protect, logoutUser);
 
 module.exports = router;
+const userController = require('../controllers/userController');
