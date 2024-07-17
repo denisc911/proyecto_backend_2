@@ -227,11 +227,11 @@ Crea una documentación de los endpoints de tu proyecto
 | `Authorization` | `string` | **Required**. Bearer token            |
 ## Installation
 
-Install my-project with npm
+Instalar con npm
 
 ```bash
-  npm install my-project
-  cd my-project
+  npm install backend2
+  cd backend2
 ```
     
 ## Deployment
