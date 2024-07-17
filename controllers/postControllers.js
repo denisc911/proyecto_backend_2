@@ -1,29 +1,27 @@
-// controllers/postController.js
-
-// Función para obtener todas las publicaciones
+// Todas las publicaciones
 exports.getAllPosts = (req, res) => {
-    res.send('Obteniendo todas las publicaciones');
+    res.send('Aquí todas las publicaciones');
 };
 
-// Función para crear una nueva publicación
+// Nueva publicación
 exports.createPost = (req, res) => {
-    res.send('Creando una nueva publicación');
+    res.send('Creada una nueva publicación');
 };
 
-// Función para obtener una publicación por ID
+// Publicación por ID
 exports.getPostById = (req, res) => {
     const postId = req.params.id;
-    res.send(`Obteniendo publicación con ID: ${postId}`);
+    res.send(`Leyendo la publicación con ID: ${postId}`);
 };
 
-// Función para actualizar una publicación por ID
+// Actualizar una publicación por ID
 exports.updatePost = (req, res) => {
     const postId = req.params.id;
-    res.send(`Actualizando publicación con ID: ${postId}`);
+    res.send(`Actualizando la publicación de ID: ${postId}`);
 };
 
-// Función para eliminar una publicación por ID
+// Eliminar una publicación por ID
 exports.deletePost = (req, res) => {
     const postId = req.params.id;
-    res.send(`Eliminando publicación con ID: ${postId}`);
+    res.send(`Eliminanada la publicación de ID: ${postId}`);
 };

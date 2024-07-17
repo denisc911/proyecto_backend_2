@@ -14,13 +14,13 @@ const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
-        return res.status(400).json({ message: 'Please add all fields' });
+        return res.status(400).json({ message: 'Por favor introduzca todos los datos' });
     }
 
     const userExists = await User.findOne({ email });
 
     if (userExists) {
-        return res.status(400).json({ message: 'User already exists' });
+        return res.status(400).json({ message: 'El usuario indicado ya existe' });
     }
 
     const user = await User.create({
@@ -37,7 +37,7 @@ const registerUser = async (req, res) => {
             token: generateToken(user._id),
         });
     } else {
-        res.status(400).json({ message: 'Invalid user data' });
+        res.status(400).json({ message: 'Datos de usuario invalidos' });
     }
 };
 
@@ -54,7 +54,7 @@ const loginUser = async (req, res) => {
             token: generateToken(user._id),
         });
     } else {
-        res.status(400).json({ message: 'Invalid credentials' });
+        res.status(400).json({ message: 'Credenciales invalidas' });
     }
 };
 
@@ -68,12 +68,12 @@ const getUserProfile = async (req, res) => {
             email: user.email,
         });
     } else {
-        res.status(404).json({ message: 'User not found' });
+        res.status(404).json({ message: 'Usuario no encontrado' });
     }
 };
 
 const logoutUser = (req, res) => {
-    res.json({ message: 'User logged out' });
+    res.json({ message: 'Usuario hizo logout exitosamente' });
 };
 
 module.exports = {

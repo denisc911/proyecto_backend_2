@@ -17,7 +17,6 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-// Método para hash de contraseña
 UserSchema.pre('save', async function(next) {
     if (!this.isModified('password')) {
         next();
