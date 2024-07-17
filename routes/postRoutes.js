@@ -1,22 +1,20 @@
-// routes/postRoutes.js
-
 const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/postControllers');
 
-// Ruta para obtener todas las publicaciones
+// Obtener todas las publicaciones
 router.get('/', postController.getAllPosts);
 
-// Ruta para crear una nueva publicación
+// Nueva publicación
 router.post('/', postController.createPost);
 
-// Ruta para obtener una publicación por ID
+// Ver una publicación por ID
 router.get('/:id', postController.getPostById);
 
-// Ruta para actualizar una publicación por ID
+// Actualizar una publicación por ID
 router.put('/:id', postController.updatePost);
 
-// Ruta para eliminar una publicación por ID
+// Eliminar una publicación por ID
 router.delete('/:id', postController.deletePost);
 
 module.exports = router;
