@@ -11,8 +11,8 @@ connectDB();
 app.use(express.json());
 
 // Rutas
-app.use('/api/users', require('../routes/userRoutes'));
-app.use('/api/posts', require('../routes/postRoutes')); // Corrige la ruta aquí
+app.use('/controllers/users', require('../routes/userRoutes'));
+app.use('/controllers/posts', require('../routes/postRoutes')); // Corregir ruta aquí
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 5000;
