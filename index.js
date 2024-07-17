@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('../config');
+const connectDB = require('./config.js');
 require('dotenv').config();
 
 const app = express();
@@ -11,11 +11,11 @@ connectDB();
 app.use(express.json());
 
 // Rutas
-app.use('/controllers/users', require('../routes/userRoutes'));
-app.use('/controllers/posts', require('../routes/postRoutes')); // Corregir ruta aquí
+app.use('/controllers/users', require('./routes/userRoutes'));
+app.use('/controllers/posts', require('./routes/postRoutes')); // Corregir ruta aquí
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Servidor iniciado en el puerto ${PORT}`);
 });
