@@ -1,6 +1,6 @@
 const express = require('express');
 const { registerUser, loginUser, getUserProfile, logoutUser } = require('../controllers/userControllers'); // Ruta corregida
-const { protect } = require('../middleware/authMiddleware');
+const { protect } = require('../middleware/authorization');
 const router = express.Router();
 
 router.post('/register', registerUser);

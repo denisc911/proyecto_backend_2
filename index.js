@@ -11,7 +11,7 @@ connectDB();
 app.use(express.json());
 
 // Rutas
-app.use('/controllers/users', require('./routes/userRoutes'));
+app.use('/controllers/users', require('./routes/userRoutes.js'));
 app.use('/controllers/posts', require('./routes/postRoutes')); // Corregir ruta aquí
 
 // Iniciar el servidor
