@@ -1,22 +1,22 @@
-// routes/postRoutes.js
-
 const express = require('express');
 const router = express.Router();
-const postController = require('../controllers/postController');
+const postController = require('../controllers/postControllers');
+const authMiddleware = require('../middleware/auth');
+const checkOwnership = require('../middleware/authmiddleware');
 
-// Ruta para obtener todas las publicaciones
-router.get('/', postController.getAllPosts);
+// Obtener todas las publicaciones
+router.get('/', authMiddleware, postController.getAllPosts);
 
-// Ruta para crear una nueva publicación
-router.post('/', postController.createPost);
+// Nueva publicación
+router.post('/', authMiddleware, postController.createPost);
 
-// Ruta para obtener una publicación por ID
-router.get('/:id', postController.getPostById);
+// Ver una publicación por ID
+router.get('/:id', authMiddleware, postController.getPostById);
 
-// Ruta para actualizar una publicación por ID
-router.put('/:id', postController.updatePost);
+// Actualizar una publicación por ID
+router.put('/:id', authMiddleware, checkOwnership, postController.updatePost);
 
-// Ruta para eliminar una publicación por ID
-router.delete('/:id', postController.deletePost);
+// Eliminar una publicación por ID
+router.delete('/:id', authMiddleware, checkOwnership, postController.deletePost);
 
 module.exports = router;
