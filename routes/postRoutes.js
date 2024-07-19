@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/postControllers');
 const authMiddleware = require('../middleware/auth');
-const checkOwnership = require('../middleware/authorization');
+const checkOwnership = require('../middleware/authmiddleware');
 
 // Obtener todas las publicaciones
 router.get('/', authMiddleware, postController.getAllPosts);
